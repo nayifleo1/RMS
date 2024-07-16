@@ -1,0 +1,687 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap');
+
+/* CSS Variables for Colors and Fonts */
+:root {
+    --primary-color: #10002B;
+    --secondary-color: #240046;
+    --accent-color: #3C096C;
+    --accent-color-2: #5A189A;
+    --accent-color-3: #7B2CBF;
+    --accent-color-4: #9D4EDD;
+    --accent-color-5: #C77DFF;
+    --background-color: #E0AAFF;
+    --text-color: #240046;
+    --focus-outline-color: #5A189A;
+    --transition-duration: 0.3s;
+    --aurora-colors: linear-gradient(135deg, #10002B, #240046, #3C096C, #5A189A, #7B2CBF, #9D4EDD, #C77DFF);
+    --glass-background: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --header-background: rgba(30, 30, 30, 0.4); /* More transparent black */
+}
+
+/* Fiery Theme */
+.fiery-theme {
+    --primary-color: #03071E;
+    --secondary-color: #370617;
+    --accent-color: #6A040F;
+    --accent-color-2: #9D0208;
+    --accent-color-3: #D00000;
+    --background-color: #FFBA08;
+    --text-color: #03071E;
+    --focus-outline-color: #6A040F;
+    --header-background: rgba(3, 7, 30, 0.8);
+    --glass-background: rgba(255, 186, 8, 0.8);
+    --glass-border: rgba(3, 7, 30, 0.2);
+}
+
+/* General Styles */
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    background: linear-gradient(to right, var(--background-color), #FFFFFF);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background var(--transition-duration), color var(--transition-duration);
+    overflow: auto; /* Allow overflow for scrolling */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--aurora-colors);
+    opacity: 0.6;
+    z-index: -1;
+    animation: aurora 10s linear infinite;
+}
+
+/* Aurora Animation */
+@keyframes aurora {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Accessibility Improvements */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--focus-outline-color);
+    outline-offset: 2px;
+    border-radius: 10px; /* Rounded edges */
+}
+
+/* Glassmorphism Effect */
+.glassmorphism {
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow var(--transition-duration), transform var(--transition-duration);
+}
+
+.glassmorphism:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+    backdrop-filter: none; /* Remove blur effect */
+    -webkit-backdrop-filter: none; /* Remove blur effect */
+}
+
+/* Header Styles */
+header {
+    background: var(--header-background);
+    color: var(--background-color);
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background var(--transition-duration), box-shadow var(--transition-duration);
+    border-radius: 0 0 20px 20px; /* Rounded edges */
+    position: relative;
+    z-index: 1;
+}
+
+header:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+    z-index: 1;
+}
+
+.navbar-brand a {
+    color: var(--background-color);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background var(--transition-duration), transform var(--transition-duration);
+    border-radius: 10px; /* Rounded edges */
+    padding: 0.75em 1.5em;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li a .nav-text {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity var(--transition-duration), transform var(--transition-duration);
+}
+
+nav ul li a:hover .nav-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav ul li a:hover .fa {
+    transform: translateY(-10px);
+}
+
+nav ul li a .fa {
+    transition: transform var(--transition-duration);
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Subtle background change on hover */
+}
+
+/* Navbar Welcome Styles */
+.navbar-welcome {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--background-color);
+    text-align: right;
+}
+
+.navbar-welcome .member-id {
+    font-size: 0.875em;
+    color: var(--accent-color-5);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+/* Logout Button */
+.logout-button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    text-decoration: none;
+    padding: 0.75em 1.5em;
+    border-radius: 10px; /* Rounded edges */
+    transition: background var(--transition-duration), transform var(--transition-duration), box-shadow var(--transition-duration);
+    font-size: 1em;
+    display: inline-block;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.logout-button:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
+}
+
+/* Theme Toggle Dropdown */
+.theme-toggle-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-toggle-dropdown select {
+    padding: 5px 10px;
+    font-size: 0.75em; /* Reduced font size */
+    border-radius: 5px;
+    border: 1px solid var(--focus-outline-color);
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+.theme-toggle-dropdown select:focus {
+    outline: none;
+    border-color: var(--focus-outline-color);
+}
+
+.theme-toggle-dropdown select option {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+/* Main Content */
+main {
+    padding: 2em;
+    padding-bottom: 4em; /* Add padding to the bottom */
+    max-width: 800px;
+    margin: 2em auto;
+    background: var(--background-color);
+    border-radius: 20px; /* Rounded edges */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow var(--transition-duration), transform var(--transition-duration);
+    position: relative;
+    z-index: 1;
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    overflow: auto; /* Add overflow property */
+    text-align: center; /* Ensure text alignment */
+}
+
+main:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+    backdrop-filter: none; /* Remove blur effect */
+    -webkit-backdrop-filter: none; /* Remove blur effect */
+}
+
+/* Dashboard Section */
+.dashboard-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
+.dashboard-section h3 {
+    margin-top: 2em;
+    font-size: 1.5em;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5em;
+    text-align: left; /* Aligning left to differentiate from main content */
+}
+
+.dashboard-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    animation: fadeIn 1s ease-in-out; /* Animation for table */
+    text-align: left; /* Ensure text alignment */
+}
+
+.dashboard-section th, .dashboard-section td {
+    border: 1px solid #ddd;
+    padding: 0.75em;
+    vertical-align: middle; /* Ensure vertical alignment */
+}
+
+.dashboard-section th {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* Action Container */
+.action-container {
+    display: flex;
+    gap: 1em; /* Space between the forms */
+}
+
+/* Button styles */
+.action-form .accept-button {
+    background-color: green !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    cursor: pointer !important;
+}
+
+.action-form .reject-button {
+    background-color: red !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    cursor: pointer !important;
+}
+
+/* Ensure no other styles are overriding these */
+.action-form .accept-button:hover,
+.action-form .reject-button:hover {
+    opacity: 0.9; /* Example hover effect */
+}
+
+@media (max-width: 768px) {
+    .action-container {
+        flex-direction: column;
+    }
+}
+
+/* Clear Buttons */
+.clear-buttons {
+    display: flex;
+    justify-content: space-evenly; /* Reduce space between buttons */
+    margin-bottom: 1em;
+    flex-wrap: wrap; /* Allow wrapping to ensure responsiveness */
+}
+
+.clear-form {
+    flex: 1 1 45%; /* Ensure forms take up available space */
+    margin: 0.5em; /* Add some margin for better spacing */
+}
+
+.clear-form input[type="submit"] {
+    width: 100%;
+    padding: 0.75em;
+    background-color: rgb(100, 2, 2);
+    color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), transform var(--transition-duration);
+}
+
+.clear-form input[type="submit"]:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px); /* Move up slightly on hover */
+}
+
+/* Footer */
+footer {
+    background: var(--header-background);
+    color: var(--background-color);
+    text-align: center;
+    padding: 0.5em 0; /* Reduced padding */
+    font-size: 0.9em; /* Smaller font size */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: background var(--transition-duration), box-shadow var(--transition-duration);
+    border-radius: 20px 20px 0 0; /* Rounded edges */
+}
+
+footer:hover {
+    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Forms */
+form {
+    background: var(--glass-background);
+    border-radius: 20px; /* More rounded edges */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    transition: box-shadow var(--transition-duration), transform var(--transition-duration);
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+}
+
+form:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    backdrop-filter: none; /* Remove blur effect */
+    -webkit-backdrop-filter: none; /* Remove blur effect */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="password"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 0.75em;
+    margin: 0.5em 0;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded edges */
+    transition: border-color var(--transition-duration);
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="date"]:focus,
+form input[type="password"]:focus,
+form textarea:focus,
+form select:focus {
+    border-color: var(--primary-color);
+}
+
+form input[type="submit"] {
+    border: none;
+    background-color: rgba(116, 4, 4, 0.781);
+
+    padding: 0.75em 1.5em;
+    border-radius: 10px; /* Rounded edges */
+    cursor: pointer;
+    transition: background var(--transition-duration), transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+form input[type="submit"]:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
+}
+
+/* Flash Messages */
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.flashes li {
+    padding: 1em;
+    border-radius: 10px; /* Rounded edges */
+    margin: 0.5em 0;
+    animation: fadeOut 3s forwards 3s;
+}
+
+.flashes li.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flashes li.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 2em 0;
+    backdrop-filter: none; /* Remove blur effect */
+    -webkit-backdrop-filter: none; /* Remove blur effect */
+}
+
+.welcome-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.welcome-section p {
+    font-size: 1.25em;
+    margin-bottom: 1.5em;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.welcome-section button {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--background-color);
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 10px; /* Rounded edges */
+    cursor: pointer;
+    transition: background var(--transition-duration), transform var(--transition-duration), box-shadow var(--transition-duration);
+    font-size: 1em;
+}
+
+.welcome-section button:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--background-color);
+    text-decoration: none;
+    padding: 0.75em 1.5em;
+    border-radius: 10px; /* Rounded edges */
+    transition: background var(--transition-duration), transform var(--transition-duration), box-shadow var(--transition-duration);
+    font-size: 1em;
+    display: inline-block;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
+}
+
+/* Form Section */
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Success Section */
+.success-section {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.success-section p {
+    font-size: 1.25em;
+    margin-bottom: 1.5em;
+}
+
+.success-section a {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--background-color);
+    text-decoration: none;
+    padding: 0.75em 1.5em;
+    border-radius: 10px; /* Rounded edges */
+    transition: background var(--transition-duration), transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.success-section a:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
+}
+
+/* Validation Instructions */
+.validation-instructions {
+    font-size: 0.8em; /* Smaller font size */
+    font-family: 'Libre Franklin', sans-serif; /* Different font */
+    color: #666; /* Gray color for the text */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .navbar-welcome {
+        margin-top: 1em;
+        width: 100%;
+        text-align: center;
+    }
+
+    .welcome-section h2 {
+        font-size: 2em;
+    }
+
+    .welcome-section p {
+        font-size: 1em;
+    }
+
+    .form-section h2 {
+        font-size: 1.5em;
+    }
+
+    .success-section p {
+        font-size: 1em;
+    }
+
+    form input[type="submit"],
+    .welcome-section button,
+    .success-section a {
+        font-size: 0.9em;
+    }
+
+    .dashboard-section h2 {
+        font-size: 1.75em;
+    }
+
+    .dashboard-section h3 {
+        font-size: 1.25em;
+    }
+}
+
+/* Button styles */
+.accept-button {
+    background-color: green !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.reject-button {
+    background-color: red !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* More specific styles for accept and reject buttons with gradients */
+.action-form .accept-button,
+.action-container .accept-button {
+    background: linear-gradient(135deg, #046804f3, #008000) !important; /* Gradient green */
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    cursor: pointer !important;
+}
+
+.action-form .reject-button,
+.action-container .reject-button {
+    background: linear-gradient(135deg, #680404, #800000) !important; /* Gradient red */
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    cursor: pointer !important;
+}
+
+/* Hover effects */
+.action-form .accept-button:hover,
+.action-container .accept-button:hover,
+.action-form .reject-button:hover,
+.action-container .reject-button:hover {
+    opacity: 0.9; /* Example hover effect */
+}
+.status-accepted {
+    color: green;
+}
+
+.status-rejected {
+    color: red;
+}
+
