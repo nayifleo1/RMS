@@ -820,7 +820,7 @@ form input[type="submit"]:hover {
     max-width: calc(80px / cos(45deg));
     height: 2vw;
     max-height: 14px;
-    background: repeating-linear-gradient(-45deg, #fff 0 15px, transparent 0 20px) left/200% 100%;
+    background: repeating-linear-gradient(-45deg, var(--accent-color) 0 15px, #000 0 30px) left/200% 100%;
     animation: l3 2s infinite linear;
     margin-top: 5vh; /* Space between the two loaders */
 }
@@ -829,6 +829,7 @@ form input[type="submit"]:hover {
         background-position: right;
     }
 }
+
 
 /* Loading Screen Styles */
 .loading-screen {
