@@ -706,17 +706,57 @@ form input[type="submit"]:hover {
     font-weight: 200; /* ExtraLight 200 for buttons */
 }
 
-/* Loading Spinner */
-.loading-spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left-color: var(--primary-color);
+/* Loading Screen Styles */
+/* New Loader Styles with Accent Support */
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    box-shadow: 0 0 0 3px var(--accent-color) inset; /* Use accent color */
     border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+    position: relative;
+    animation: l11 7s infinite;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 3px);
+    left: calc(50% - 12.5px);
+    box-shadow: inherit;
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transform-origin: 50% -28px;
+    animation: l11 1.5s infinite;
+  }
+  .loader:after {
+    animation-delay: -0.75s;
+  }
+  @keyframes l11 {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Loading Screen Styles */
+  .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 1); /* Pitch black background */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0; /* Initially hidden */
+      pointer-events: none; /* Prevent interactions when hidden */
+      transition: opacity 0.2s ease; /* Smooth transition */
+  }
+  
+  .loading-screen.visible {
+      opacity: 1; /* Show loading screen */
+      pointer-events: all; /* Allow interactions */
+  }
+  
