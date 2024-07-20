@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
     function showLoadingScreen() {
         startTime = Date.now();
         loadingScreen.classList.add('visible');
+        requestAnimationFrame(() => {
+            loadingScreen.style.opacity = '1'; // Ensure the opacity transition
+        });
     }
 
     function hideLoadingScreen() {
@@ -14,10 +17,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (remainingTime > 0) {
             setTimeout(function() {
-                loadingScreen.classList.remove('visible');
+                loadingScreen.style.opacity = '0'; // Fade out
+                setTimeout(() => {
+                    loadingScreen.classList.remove('visible');
+                }, 200); // Match the transition duration
             }, remainingTime);
         } else {
-            loadingScreen.classList.remove('visible');
+            loadingScreen.style.opacity = '0'; // Fade out
+            setTimeout(() => {
+                loadingScreen.classList.remove('visible');
+            }, 200); // Match the transition duration
         }
     }
 
