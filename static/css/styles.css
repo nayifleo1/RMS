@@ -39,6 +39,7 @@ body::before {
     z-index: -1; /* Make sure the overlay is behind all other content */
 }
 
+
 /* Default Theme Background */
 body.default-theme {
     background-image: url('../images/imgs1.jpg');
@@ -62,7 +63,7 @@ body.default-theme::before {
 }
 
 body.cool-blue-theme {
-    background-image: url('../images/img5.jpg');
+    background-image: url('../images/img10.jpg');
 }
 
 body.cool-blue-theme::before {
@@ -83,7 +84,7 @@ body.cool-blue-theme::before {
 }
 
 body.nature-green-theme {
-    background-image: url('../images/img6.png');
+    background-image: url('../images/img11.jpg');
 }
 
 body.nature-green-theme::before {
@@ -92,24 +93,25 @@ body.nature-green-theme::before {
 
 /* Forest Theme */
 .forest-theme {
-    --primary-color: #2F3E46; /* Dark Grayish Blue */
-    --secondary-color: #354F52; /* Moderate Blue Green */
-    --accent-color: #52796F; /* Grayish Green */
+    --primary-color: #382929; /* Dark Grayish Blue */
+    --secondary-color: #5e3710; /* Moderate Blue Green */
+    --accent-color: #88591f; /* Grayish Green */
     --background-color: #CAD2C5; /* Light Grayish Green */
-    --text-color: #2F3E46; /* Dark Grayish Blue */
+    --text-color: #461616; /* Dark Grayish Blue */
     --focus-outline-color: #52796F; /* Grayish Green */
     --header-background: rgba(47, 62, 70, 0.8);
-    --glass-background: rgba(202, 210, 197, 0.6);
+    --glass-background: rgba(130, 131, 139, 0.509);
     --glass-border: rgba(202, 210, 197, 0.3);
 }
 
 body.forest-theme {
-    background-image: url('../images/img9.png');
+    background-image: url('../images/img12.jpg');
 }
 
 body.forest-theme::before {
     background: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
+
 
 /* Accessibility Improvements */
 a:focus, button:focus, input:focus, textarea:focus {
