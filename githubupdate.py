@@ -1,4 +1,5 @@
 import subprocess
+import os
 
 def run_command(command):
     """Run a command in the shell and print the output."""
@@ -13,10 +14,10 @@ def run_command(command):
 def update_github_project():
     """Update the GitHub project from the local computer."""
     # Path to your project directory
-    project_directory = "C:\Users\NAYIF\Desktop\Tabnotificiation\project\SocietyManagementSystem\ResidentialManagementSystemMAIN\ResidentialManagementSystemMAIN"
+    project_directory = r"C:\Users\NAYIF\Desktop\Tabnotificiation\project\SocietyManagementSystem\ResidentialManagementSystemMAIN\ResidentialManagementSystemMAIN"
 
     # Change to the project directory
-    run_command(f"cd {project_directory}")
+    os.chdir(project_directory)
 
     # Check the status of the repository
     run_command("git status")
@@ -30,10 +31,10 @@ def update_github_project():
 
     # Pull the latest changes from the remote repository
     branch_name = "main"  # Change this if you are using a different branch
-    run_command(f"git pull origin master")
+    run_command(f"git pull origin {branch_name}")
 
     # Push changes to GitHub
-    run_command(f"git push origin master")
+    run_command(f"git push origin {branch_name}")
 
 if __name__ == "__main__":
     update_github_project()
