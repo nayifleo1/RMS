@@ -364,7 +364,10 @@ main:hover {
     border: none !important;
     padding: 10px 20px !important;
     cursor: pointer !important;
+<<<<<<< HEAD
     font-weight: 200; /* ExtraLight 200 for buttons */
+=======
+>>>>>>> 8b717180ed94a17551e3f7d335495c4c51a4a89d
 }
 
 .action-form .reject-button {
@@ -373,9 +376,15 @@ main:hover {
     border: none !important;
     padding: 10px 20px !important;
     cursor: pointer !important;
+<<<<<<< HEAD
     font-weight: 200; /* ExtraLight 200 for buttons */
 }
 
+=======
+}
+
+/* Ensure no other styles are overriding these */
+>>>>>>> 8b717180ed94a17551e3f7d335495c4c51a4a89d
 .action-form .accept-button:hover,
 .action-form .reject-button:hover {
     opacity: 0.9; /* Example hover effect */
@@ -635,7 +644,11 @@ form input[type="submit"]:hover {
     color: #666; /* Gray color for the text */
 }
 
+<<<<<<< HEAD
 /* Responsive adjustments */
+=======
+/* Media Queries for Responsiveness */
+>>>>>>> 8b717180ed94a17551e3f7d335495c4c51a4a89d
 @media (max-width: 768px) {
     .navbar-container {
         flex-direction: column;
@@ -688,6 +701,7 @@ form input[type="submit"]:hover {
     }
 }
 
+<<<<<<< HEAD
 @media (max-width: 480px) {
     header {
         padding: 0.5em 0;
@@ -786,6 +800,28 @@ form input[type="submit"]:hover {
     }
 }
 
+=======
+/* Button styles */
+.accept-button {
+    background-color: green !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 200; /* ExtraLight 200 for buttons */
+}
+
+.reject-button {
+    background-color: red !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 200; /* ExtraLight 200 for buttons */
+}
+
+/* Previous Loader Styles with Accent Support */
+>>>>>>> 8b717180ed94a17551e3f7d335495c4c51a4a89d
 /* Previous Loader Styles with Accent Support */
 .loader {
     width: 10vw;
@@ -796,9 +832,15 @@ form input[type="submit"]:hover {
     border-radius: 50%;
     position: relative;
     animation: l11 1.5s infinite;
+<<<<<<< HEAD
 }
 .loader:before,
 .loader:after {
+=======
+  }
+  .loader:before,
+  .loader:after {
+>>>>>>> 8b717180ed94a17551e3f7d335495c4c51a4a89d
     content: "";
     position: absolute;
     top: calc(100% + 3px);
@@ -809,6 +851,7 @@ form input[type="submit"]:hover {
     border-radius: 50%;
     transform-origin: 50% -28px;
     animation: l11 1.5s infinite;
+<<<<<<< HEAD
 }
 .loader:after {
     animation-delay: -0.75s;
@@ -821,6 +864,20 @@ form input[type="submit"]:hover {
 
 /* Bar Loader Styles */
 .bar-loader {
+=======
+  }
+  .loader:after {
+    animation-delay: -0.75s;
+  }
+  @keyframes l11 {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Bar Loader Styles */
+  .bar-loader {
+>>>>>>> 8b717180ed94a17551e3f7d335495c4c51a4a89d
     width: 50vw;
     max-width: calc(80px / cos(45deg));
     height: 2vw;
@@ -828,6 +885,7 @@ form input[type="submit"]:hover {
     background: repeating-linear-gradient(-45deg, #fff 0 15px, transparent 0 20px) left/200% 100%;
     animation: l3 2s infinite linear;
     margin-top: 5vh; /* Space between the two loaders */
+<<<<<<< HEAD
 }
 @keyframes l3 {
     100% {
@@ -837,6 +895,17 @@ form input[type="submit"]:hover {
 
 /* Loading Screen Styles */
 .loading-screen {
+=======
+  }
+  @keyframes l3 {
+    100% {
+      background-position: right;
+    }
+  }
+  
+  /* Loading Screen Styles */
+  .loading-screen {
+>>>>>>> 8b717180ed94a17551e3f7d335495c4c51a4a89d
     position: fixed;
     top: 0;
     left: 0;
@@ -851,6 +920,7 @@ form input[type="submit"]:hover {
     opacity: 0; /* Initially hidden */
     pointer-events: none; /* Prevent interactions when hidden */
     transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+<<<<<<< HEAD
 }
 
 .loading-screen.visible {
@@ -883,3 +953,37 @@ form input[type="submit"]:hover {
         height: 5vw;
     }
 }
+=======
+  }
+  
+  .loading-screen.visible {
+    opacity: 1; /* Show loading screen */
+    transform: scale(1); /* Scale to normal size */
+    pointer-events: all; /* Allow interactions */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .loader {
+      width: 15vw;
+      height: 15vw;
+    }
+  
+    .bar-loader {
+      width: 70vw;
+      height: 4vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .loader {
+      width: 20vw;
+      height: 20vw;
+    }
+  
+    .bar-loader {
+      width: 90vw;
+      height: 5vw;
+    }
+  }
+>>>>>>> 8b717180ed94a17551e3f7d335495c4c51a4a89d
