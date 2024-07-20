@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     var loadingScreen = document.getElementById('loading-screen');
-    var minDisplayTime = 1000; // Minimum display time in milliseconds
+    var minDisplayTime = 600; // Minimum display time in milliseconds
     var startTime;
 
     function showLoadingScreen() {

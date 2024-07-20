@@ -5,6 +5,7 @@
     --primary-color: #3A4750; /* Dark Gray */
     --secondary-color: #F6F7F8; /* Light Gray */
     --accent-color: #EA5455; /* Bright Red */
+    --accent-color-light: #f28b8b; /* Lighter shade of Bright Red */
     --background-color: #F7FFF7; /* Off White */
     --text-color: #303841; /* Dark Charcoal */
     --focus-outline-color: #EA5455; /* Bright Red */
@@ -39,7 +40,6 @@ body::before {
     z-index: -1; /* Make sure the overlay is behind all other content */
 }
 
-
 /* Default Theme Background */
 body.default-theme {
     background-image: url('../images/imgs1.jpg');
@@ -54,6 +54,7 @@ body.default-theme::before {
     --primary-color: #1B263B;
     --secondary-color: #415A77;
     --accent-color: #778DA9;
+    --accent-color-light: #a1b4c8; /* Lighter shade of Cool Blue */
     --background-color: #E0E1DD;
     --text-color: #1B263B;
     --focus-outline-color: #415A77;
@@ -75,6 +76,7 @@ body.cool-blue-theme::before {
     --primary-color: #0D0A0B; /* Black */
     --secondary-color: #454955; /* Dark Gray */
     --accent-color: #72B01D; /* Green */
+    --accent-color-light: #9fce56; /* Lighter shade of Green */
     --background-color: #F3EFF5; /* Light Gray */
     --text-color: #3F7D20; /* Dark Green */
     --focus-outline-color: #72B01D; /* Green */
@@ -96,6 +98,7 @@ body.nature-green-theme::before {
     --primary-color: #382929; /* Dark Grayish Blue */
     --secondary-color: #5e3710; /* Moderate Blue Green */
     --accent-color: #88591f; /* Grayish Green */
+    --accent-color-light: #b6833a; /* Lighter shade of Forest Green */
     --background-color: #CAD2C5; /* Light Grayish Green */
     --text-color: #461616; /* Dark Grayish Blue */
     --focus-outline-color: #52796F; /* Grayish Green */
@@ -111,7 +114,6 @@ body.forest-theme {
 body.forest-theme::before {
     background: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
-
 
 /* Accessibility Improvements */
 a:focus, button:focus, input:focus, textarea:focus {
@@ -201,29 +203,18 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-nav ul li a .nav-text {
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity var(--transition-duration), transform var(--transition-duration);
-}
-
-nav ul li a:hover .nav-text {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-nav ul li a:hover .fa {
-    transform: translateY(-10px);
-}
-
-nav ul li a .fa {
-    transition: transform var(--transition-duration);
+    border: 1px solid var(--accent-color); /* Outer line referring to the accent color */
 }
 
 nav ul li a:hover {
-    background: rgba(58, 71, 80, 0.8); /* Subtle background change on hover */
+    background: var(--accent-color); /* Darker accent background on hover */
+    border-color: var(--accent-color); /* Ensure border stays the same */
+}
+
+nav ul li a.active {
+    background: var(--accent-color); /* Lit accent color for active page */
+    transform: scale(1.05); /* Slightly bigger */
+    border-color: var(--accent-color); /* Ensure border stays the same */
 }
 
 /* Navbar Welcome Styles */
@@ -257,12 +248,14 @@ nav ul li a:hover {
     display: inline-block;
     text-align: center;
     margin: 0.5em 0;
+    border: 1px solid var(--accent-color); /* Outer line referring to the accent color */
 }
 
 .logout-button:hover {
     background: var(--accent-color);
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
+    border-color: var(--accent-color); /* Ensure border stays the same */
 }
 
 /* Theme Toggle Dropdown */
@@ -581,7 +574,7 @@ form input[type="submit"]:hover {
     text-decoration: none;
     padding: 0.75em 1.5em;
     border-radius: 10px; /* Rounded edges */
-    transition: background var(--transition-duration), transform var(--transition-duration), box-shadow var(--transition-duration);
+    transition: background var(--transition-duration), transform var(--transition-duration), box-shadow var (--transition-duration);
     font-size: 1em;
     display: inline-block;
     text-align: center;
