@@ -13,8 +13,11 @@ def run_command(command):
 
 def update_github_project():
     """Update the GitHub project from the local computer."""
-    # Path to your project directory
-    project_directory = r"C:\Users\NAYIF\Desktop\Tabnotificiation\project\SocietyManagementSystem\ResidentialManagementSystemMAIN\ResidentialManagementSystemMAIN"
+    # Get the current working directory
+    project_directory = os.getcwd()
+
+    # Print the current working directory
+    print(f"Current project directory: {project_directory}")
 
     # Change to the project directory
     os.chdir(project_directory)
