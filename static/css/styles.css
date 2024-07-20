@@ -23,21 +23,9 @@ body {
     overflow: auto; /* Allow overflow for scrolling */
 }
 
-/* Default Theme Backgrounds */
-.dashboard-page {
-    background-image: url('../images/default_dashboard.jpg');
-}
-
-.complaints-page {
-    background-image: url('../images/default_complaints.jpg');
-}
-
-.facilities-page {
-    background-image: url('../images/default_facilities.jpg');
-}
-
-.profile-page {
-    background-image: url('../images/default_profile.jpg');
+/* Default Theme Background */
+body.default-theme {
+    background-image: url('../images/img7.png');
 }
 
 /* Cool Blue Theme */
@@ -53,20 +41,8 @@ body {
     --glass-border: rgba(224, 225, 221, 0.3);
 }
 
-.cool-blue-theme.dashboard-page {
-    background-image: url('../images/cool_blue_dashboard.jpg');
-}
-
-.cool-blue-theme.complaints-page {
-    background-image: url('../images/cool_blue_complaints.jpg');
-}
-
-.cool-blue-theme.facilities-page {
-    background-image: url('../images/cool_blue_facilities.jpg');
-}
-
-.cool-blue-theme.profile-page {
-    background-image: url('../images/cool_blue_profile.jpg');
+body.cool-blue-theme {
+    background-image: url('../images/img5.jpg');
 }
 
 /* Nature Green Theme */
@@ -82,20 +58,8 @@ body {
     --glass-border: rgba(243, 239, 245, 0.3);
 }
 
-.nature-green-theme.dashboard-page {
-    background-image: url('../images/nature_green_dashboard.jpg');
-}
-
-.nature-green-theme.complaints-page {
-    background-image: url('../images/nature_green_complaints.jpg');
-}
-
-.nature-green-theme.facilities-page {
-    background-image: url('../images/nature_green_facilities.jpg');
-}
-
-.nature-green-theme.profile-page {
-    background-image: url('../images/nature_green_profile.jpg');
+body.nature-green-theme {
+    background-image: url('../images/img6.png');
 }
 
 /* Forest Theme */
@@ -111,20 +75,8 @@ body {
     --glass-border: rgba(202, 210, 197, 0.3);
 }
 
-.forest-theme.dashboard-page {
-    background-image: url('../images/forest_dashboard.jpg');
-}
-
-.forest-theme.complaints-page {
-    background-image: url('../images/forest_complaints.jpg');
-}
-
-.forest-theme.facilities-page {
-    background-image: url('../images/forest_facilities.jpg');
-}
-
-.forest-theme.profile-page {
-    background-image: url('../images/forest_profile.jpg');
+body.forest-theme {
+    background-image: url('../images/img9.png');
 }
 
 /* Accessibility Improvements */
