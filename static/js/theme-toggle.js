@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     themeToggle.value = savedTheme;
 
     themeToggle.addEventListener('change', () => {
-        document.body.classList.remove('default-theme', 'bluish-theme', 'fiery-theme');
+        document.body.classList.remove('default-theme', 'cool-blue-theme', 'nature-green-theme', 'forest-theme');
         const selectedTheme = themeToggle.value;
         document.body.classList.add(`${selectedTheme}-theme`);
         // Save the selected theme to localStorage

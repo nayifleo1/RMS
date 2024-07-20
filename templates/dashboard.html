@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<body class="dashboard-page">
 <section class="dashboard-section">
     <h2>Dashboard</h2>
-    
     <h3>Your Complaints</h3>
     {% if complaints %}
         <table>
@@ -31,7 +31,6 @@
     {% else %}
         <p>No complaints found.</p>
     {% endif %}
-    
     <h3>Your Booked Facilities</h3>
     {% if bookings %}
         <table>
@@ -58,4 +57,5 @@
         <p>No booked facilities found.</p>
     {% endif %}
 </section>
+</body>
 {% endblock %}

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
 </head>
-<body class="default-theme">
+<body>
     <header>
         <div class="navbar-container">
             <div class="navbar-brand">
@@ -43,9 +43,11 @@
                     <a href="{{ url_for('logout') }}" class="logout-button"><i class="fa fa-sign-out-alt"></i>Logout</a>
                 {% endif %}
                 <div class="theme-toggle-dropdown">
-                    <select id="theme-toggle"<i class="fa fa-building"></i> class="btn-primary">
+                    <select id="theme-toggle" class="btn-primary">
                         <option value="default">Default</option>
-                        <option value="fiery">Fiery</option>
+                        <option value="cool-blue">Cool Blue</option>
+                        <option value="nature-green">Nature Green</option>
+                        <option value="forest">Forest</option>
                     </select>
                 </div>
             </div>

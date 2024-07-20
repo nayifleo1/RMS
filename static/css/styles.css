@@ -1,44 +1,21 @@
-/* Importing Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap');
-
-/* CSS Variables for Colors and Fonts */
+/* Default Theme */
 :root {
-    --primary-color: #10002B;
-    --secondary-color: #240046;
-    --accent-color: #3C096C;
-    --accent-color-2: #5A189A;
-    --accent-color-3: #7B2CBF;
-    --accent-color-4: #9D4EDD;
-    --accent-color-5: #C77DFF;
-    --background-color: #E0AAFF;
-    --text-color: #240046;
-    --focus-outline-color: #5A189A;
+    --primary-color: #3A4750; /* Dark Gray */
+    --secondary-color: #F6F7F8; /* Light Gray */
+    --accent-color: #EA5455; /* Bright Red */
+    --background-color: #F7FFF7; /* Off White */
+    --text-color: #303841; /* Dark Charcoal */
+    --focus-outline-color: #EA5455; /* Bright Red */
     --transition-duration: 0.3s;
-    --aurora-colors: linear-gradient(135deg, #10002B, #240046, #3C096C, #5A189A, #7B2CBF, #9D4EDD, #C77DFF);
-    --glass-background: rgba(255, 255, 255, 0.2);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --header-background: rgba(30, 30, 30, 0.4); /* More transparent black */
+    --glass-background: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --header-background: rgba(58, 71, 80, 0.8); /* Dark Gray with transparency */
 }
 
-/* Fiery Theme */
-.fiery-theme {
-    --primary-color: #03071E;
-    --secondary-color: #370617;
-    --accent-color: #6A040F;
-    --accent-color-2: #9D0208;
-    --accent-color-3: #D00000;
-    --background-color: #FFBA08;
-    --text-color: #03071E;
-    --focus-outline-color: #6A040F;
-    --header-background: rgba(3, 7, 30, 0.8);
-    --glass-background: rgba(255, 186, 8, 0.8);
-    --glass-border: rgba(3, 7, 30, 0.2);
-}
-
-/* General Styles */
 body {
     font-family: 'Libre Franklin', sans-serif;
-    background: linear-gradient(to right, var(--background-color), #FFFFFF);
+    background: var(--background-color);
+    background-size: cover;
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -46,24 +23,108 @@ body {
     overflow: auto; /* Allow overflow for scrolling */
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--aurora-colors);
-    opacity: 0.6;
-    z-index: -1;
-    animation: aurora 10s linear infinite;
+/* Default Theme Backgrounds */
+.dashboard-page {
+    background-image: url('../images/default_dashboard.jpg');
 }
 
-/* Aurora Animation */
-@keyframes aurora {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.complaints-page {
+    background-image: url('../images/default_complaints.jpg');
+}
+
+.facilities-page {
+    background-image: url('../images/default_facilities.jpg');
+}
+
+.profile-page {
+    background-image: url('../images/default_profile.jpg');
+}
+
+/* Cool Blue Theme */
+.cool-blue-theme {
+    --primary-color: #1B263B;
+    --secondary-color: #415A77;
+    --accent-color: #778DA9;
+    --background-color: #E0E1DD;
+    --text-color: #1B263B;
+    --focus-outline-color: #415A77;
+    --header-background: rgba(27, 38, 59, 0.8);
+    --glass-background: rgba(224, 225, 221, 0.6);
+    --glass-border: rgba(224, 225, 221, 0.3);
+}
+
+.cool-blue-theme.dashboard-page {
+    background-image: url('../images/cool_blue_dashboard.jpg');
+}
+
+.cool-blue-theme.complaints-page {
+    background-image: url('../images/cool_blue_complaints.jpg');
+}
+
+.cool-blue-theme.facilities-page {
+    background-image: url('../images/cool_blue_facilities.jpg');
+}
+
+.cool-blue-theme.profile-page {
+    background-image: url('../images/cool_blue_profile.jpg');
+}
+
+/* Nature Green Theme */
+.nature-green-theme {
+    --primary-color: #0D0A0B; /* Black */
+    --secondary-color: #454955; /* Dark Gray */
+    --accent-color: #72B01D; /* Green */
+    --background-color: #F3EFF5; /* Light Gray */
+    --text-color: #3F7D20; /* Dark Green */
+    --focus-outline-color: #72B01D; /* Green */
+    --header-background: rgba(13, 10, 11, 0.8);
+    --glass-background: rgba(243, 239, 245, 0.6);
+    --glass-border: rgba(243, 239, 245, 0.3);
+}
+
+.nature-green-theme.dashboard-page {
+    background-image: url('../images/nature_green_dashboard.jpg');
+}
+
+.nature-green-theme.complaints-page {
+    background-image: url('../images/nature_green_complaints.jpg');
+}
+
+.nature-green-theme.facilities-page {
+    background-image: url('../images/nature_green_facilities.jpg');
+}
+
+.nature-green-theme.profile-page {
+    background-image: url('../images/nature_green_profile.jpg');
+}
+
+/* Forest Theme */
+.forest-theme {
+    --primary-color: #2F3E46; /* Dark Grayish Blue */
+    --secondary-color: #354F52; /* Moderate Blue Green */
+    --accent-color: #52796F; /* Grayish Green */
+    --background-color: #CAD2C5; /* Light Grayish Green */
+    --text-color: #2F3E46; /* Dark Grayish Blue */
+    --focus-outline-color: #52796F; /* Grayish Green */
+    --header-background: rgba(47, 62, 70, 0.8);
+    --glass-background: rgba(202, 210, 197, 0.6);
+    --glass-border: rgba(202, 210, 197, 0.3);
+}
+
+.forest-theme.dashboard-page {
+    background-image: url('../images/forest_dashboard.jpg');
+}
+
+.forest-theme.complaints-page {
+    background-image: url('../images/forest_complaints.jpg');
+}
+
+.forest-theme.facilities-page {
+    background-image: url('../images/forest_facilities.jpg');
+}
+
+.forest-theme.profile-page {
+    background-image: url('../images/forest_profile.jpg');
 }
 
 /* Accessibility Improvements */
@@ -150,7 +211,7 @@ nav ul li a {
     transition: background var(--transition-duration), transform var(--transition-duration);
     border-radius: 10px; /* Rounded edges */
     padding: 0.75em 1.5em;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(58, 71, 80, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,7 +237,7 @@ nav ul li a .fa {
 }
 
 nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2); /* Subtle background change on hover */
+    background: rgba(58, 71, 80, 0.8); /* Subtle background change on hover */
 }
 
 /* Navbar Welcome Styles */
@@ -189,7 +250,7 @@ nav ul li a:hover {
 
 .navbar-welcome .member-id {
     font-size: 0.875em;
-    color: var(--accent-color-5);
+    color: var(--accent-color);
 }
 
 .navbar-right {
@@ -433,8 +494,7 @@ form select:focus {
 
 form input[type="submit"] {
     border: none;
-    background-color: rgba(116, 4, 4, 0.781);
-
+    background-color: var(--accent-color);
     padding: 0.75em 1.5em;
     border-radius: 10px; /* Rounded edges */
     cursor: pointer;
@@ -442,7 +502,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    background: var(--secondary-color);
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
 }
@@ -506,7 +566,7 @@ form input[type="submit"]:hover {
 }
 
 .welcome-section button {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-color);
     color: var(--background-color);
     border: none;
     padding: 0.75em 1.5em;
@@ -517,14 +577,14 @@ form input[type="submit"]:hover {
 }
 
 .welcome-section button:hover {
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    background: var(--accent-color);
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
 }
 
 /* Buttons */
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-color);
     color: var(--background-color);
     text-decoration: none;
     padding: 0.75em 1.5em;
@@ -537,7 +597,7 @@ form input[type="submit"]:hover {
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    background: var(--accent-color);
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
 }
@@ -560,7 +620,7 @@ form input[type="submit"]:hover {
 }
 
 .success-section a {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-color);
     color: var(--background-color);
     text-decoration: none;
     padding: 0.75em 1.5em;
@@ -569,7 +629,7 @@ form input[type="submit"]:hover {
 }
 
 .success-section a:hover {
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    background: var(--accent-color);
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
 }
@@ -651,37 +711,17 @@ form input[type="submit"]:hover {
     cursor: pointer;
 }
 
-/* More specific styles for accept and reject buttons with gradients */
-.action-form .accept-button,
-.action-container .accept-button {
-    background: linear-gradient(135deg, #046804f3, #008000) !important; /* Gradient green */
-    color: white !important;
-    border: none !important;
-    padding: 10px 20px !important;
-    cursor: pointer !important;
+/* Loading Spinner */
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--primary-color);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
 }
 
-.action-form .reject-button,
-.action-container .reject-button {
-    background: linear-gradient(135deg, #680404, #800000) !important; /* Gradient red */
-    color: white !important;
-    border: none !important;
-    padding: 10px 20px !important;
-    cursor: pointer !important;
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
-
-/* Hover effects */
-.action-form .accept-button:hover,
-.action-container .accept-button:hover,
-.action-form .reject-button:hover,
-.action-container .reject-button:hover {
-    opacity: 0.9; /* Example hover effect */
-}
-.status-accepted {
-    color: green;
-}
-
-.status-rejected {
-    color: red;
-}
-
