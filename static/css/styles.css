@@ -879,3 +879,103 @@ form input[type="submit"]:hover {
         height: 5vw;
     }
 }
+/* Profile Page Styles */
+.gradient-custom {
+    /* fallback for old browsers */
+    background: var(--accent-color-light);
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, var(--accent-color-light), var(--accent-color));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, var(--accent-color-light), var(--accent-color));
+}
+
+/* Existing Profile Page Styles */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2em;
+}
+
+.profile-card {
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.profile-card h2 {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+
+.profile-form .form-group {
+    margin-bottom: 1em;
+}
+
+.profile-form .form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.profile-form .form-group input {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    transition: border-color var(--transition-duration);
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.profile-form .form-group input:focus {
+    border-color: var(--accent-color);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.75em 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background var(--transition-duration), transform var(--transition-duration), box-shadow var(--transition-duration);
+    font-weight: 200;
+}
+
+.btn-primary:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.input-group-append .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+.input-group-append .btn:hover {
+    background: var(--accent-color);
+}
